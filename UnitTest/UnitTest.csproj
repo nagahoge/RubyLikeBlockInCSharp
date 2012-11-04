@@ -51,14 +51,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ArrayExtensionsTest.cs" />
+    <Compile Include="Class1Test.cs" />
+    <Compile Include="IDictionaryExtensionsTest.cs" />
     <Compile Include="IntExtensionsTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="LongExtensionsTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\RubyLikeBlockInCSharp\RubyLikeBlockInCSharp.csproj">
       <Project>{7F7A0FB8-BC79-4701-BC24-76F0CA526089}</Project>
       <Name>RubyLikeBlockInCSharp</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Shadow Include="テストの参照\RubyLikeBlockInCSharp.accessor" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

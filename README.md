@@ -9,8 +9,11 @@ A DLL library to use ruby-like block expressions in CSharp Language.
 
 
 int#Times(Action proc)
+
 int#Times(Action<int> proc)
+
 long#Times(Action proc)
+
 long#Times(Action<long> proc)
 
     int n = 100;
@@ -18,6 +21,7 @@ long#Times(Action<long> proc)
 
 
 int#To(int to)
+
 long#To(int to)
 
     int sum = 0;

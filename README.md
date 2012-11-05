@@ -4,31 +4,26 @@ RubyLikeBlockInCSharp
 A DLL library to use ruby-like block expressions in CSharp Language.
 
 
+## API
 
-## Examples
 
-
-int#Times(Action proc)
-
-int#Times(Action<int> proc)
-
-long#Times(Action proc)
-
-long#Times(Action<long> proc)
+### int#Times(Action proc)
+### int#Times(Action<int> proc)
+### long#Times(Action proc)
+### long#Times(Action<long> proc)
 
     int n = 100;
     5.Times(idx => n += idx); // n will be 110
 
 
-int#To(int to)
-
-long#To(int to)
+### int#To(int to)
+### long#To(int to)
 
     int sum = 0;
     30.To(40).Each(n => sum += n); // sum will be 385
 
 
-IDictionary#Each<K, V>(Action<K, V> proc)
+### IDictionary#Each<K, V>(Action<K, V> proc)
 
     (new Dictionary<string, int>() {
         {"one", 1},
@@ -38,7 +33,7 @@ IDictionary#Each<K, V>(Action<K, V> proc)
     }).Each((key, val) => Console.WriteLine(key + ":" + val));
 
 
-IDictionary#EachWithCount<K, V>(Action<K, V, long> proc)
+### IDictionary#EachWithCount<K, V>(Action<K, V, long> proc)
 
     (new Dictionary<string, int>() {
         {"one", 1},
@@ -50,7 +45,7 @@ IDictionary#EachWithCount<K, V>(Action<K, V, long> proc)
     });
 
 
-IDictionary#KeepIf<K, V>(Func<K, V, bool> proc)
+### IDictionary#KeepIf<K, V>(Func<K, V, bool> proc)
 
     // Drop "one" and "three" key.
     var dict = (new Dictionary<string, int>() {
@@ -59,6 +54,30 @@ IDictionary#KeepIf<K, V>(Func<K, V, bool> proc)
         {"three", 3},
         {"four", 4}
     }).KeepIf((key, val) => val % 2 == 0);
+
+
+
+## How To Build
+
+1. Clone RubyLikeBlockInCSharp repository.
+
+    git clone git://github.com/nagahoge/RubyLikeBlockInCSharp.git
+
+
+2. Open RubyLikeBlockInCSharp solution.
+
+3. Build RubyLikeBlockInCSharp project.
+
+It is desirable that before build project, change build option from Debug to Release.
+
+(Right click solution, and select property will show a dialog.)
+
+4. get RubyLikeBlockInCSharp.dll created in RubyLikeBlockInCSharp/RubyLikeBlockInCSharp/bin/Release
+
+
+## How To Use
+
+It is simple to use. You must only to do is that add a reference setting of project toward RubyLikeBlockInCSharp.dll.
 
 
 

@@ -47,5 +47,23 @@ namespace RubyLikeBlock
 
             return dict;
         }
+
+        /// <summary>
+        /// Remove keys that are matched to proc dondition.
+        /// Opposite of KeepIf method.
+        /// </summary>
+        public static IDictionary<K, V> RemoveIf<K, V>(this IDictionary<K, V> dict, Func<K, V, bool> proc)
+        {
+            IList<K> keysToBeRemoved = new List<K>();
+
+            dict.Each((key, val) =>
+            {
+                if (proc(key, val)) keysToBeRemoved.Add(key);
+            });
+
+            keysToBeRemoved.Each(key => dict.Remove(key));
+
+            return dict;
+        }
     }
 }

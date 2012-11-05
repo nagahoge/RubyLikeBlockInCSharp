@@ -101,5 +101,30 @@ namespace UnitTest
             Assert.IsTrue((new int[] { 0, 2, 4, 100}).SequenceEqual(valueList));
             Assert.AreEqual(4, numberDict.Count);
         }
+
+        [TestMethod()]
+        public void RemoveIfTest()
+        {
+            var returnedValue = numberDict.RemoveIf((key, val) =>
+            {
+                return val % 2 == 1; // keep even numbers. drop odd numbers.
+            });
+
+            var keyList = new List<string>();
+            var valueList = new List<int>();
+            int count = 0;
+
+            numberDict.Each((key, val) =>
+            {
+                keyList.Add(key);
+                valueList.Add(val);
+                count++;
+            });
+
+            Assert.AreSame(numberDict, returnedValue);
+            Assert.IsTrue((new string[] { "nothing", "two", "four", "hundred" }).SequenceEqual(keyList));
+            Assert.IsTrue((new int[] { 0, 2, 4, 100 }).SequenceEqual(valueList));
+            Assert.AreEqual(4, numberDict.Count);
+        }
     }
 }

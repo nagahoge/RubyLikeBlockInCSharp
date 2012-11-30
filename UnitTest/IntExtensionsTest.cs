@@ -23,25 +23,19 @@ namespace UnitTest
         }
 
         [TestMethod()]
-        public void TimesTest_NoArguments()
+        public void TestTimes()
         {
             int n = 100;
             5.Times(() => n += 5);
-
             Assert.AreEqual(125, n);
-        }
 
-        [TestMethod()]
-        public void TimesTest_OneArgument()
-        {
-            int n = 100;
+            n = 100;
             5.Times(idx => n += idx);
-
             Assert.AreEqual(110, n);
         }
 
         [TestMethod()]
-        public void ToTest()
+        public void TestTo()
         {
             Assert.AreEqual(35, 30.To(40).Find(n => n % 7 == 0));
             Assert.AreEqual(5, 5.To(9).Length);

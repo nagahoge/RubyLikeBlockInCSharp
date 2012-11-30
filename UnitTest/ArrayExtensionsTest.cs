@@ -20,7 +20,7 @@ namespace UnitTest
 
 
         [TestMethod()]
-        public void EachTest()
+        public void TestEach()
         {
             string[] stringArray = new string[] {"1", "2", "100", "-100"};
             IList<int> list = new List<int>();
@@ -36,7 +36,7 @@ namespace UnitTest
         }
 
         [TestMethod()]
-        public void EachWithIndexTest()
+        public void TestEachWithIndex()
         {
             string[] stringArray = new string[] {"David", "Koizumi", "Mike"};
             IList<string> list = new List<string>();
@@ -52,24 +52,16 @@ namespace UnitTest
 
 
         [TestMethod()]
-        public void FindTest_StringArray()
+        public void TestFind()
         {
             string[] stringArray = new String[] { "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat" };
             Assert.AreEqual("Tue", stringArray.Find(item => item.StartsWith("T")));
             Assert.IsNull(stringArray.Find(item => item.StartsWith("Z")));
-        }
 
-        [TestMethod()]
-        public void FindTest_IntArray()
-        {
             int[] intArray = new int[] { 4, 5, 6, 7, 8, 9, 10 };
             Assert.AreEqual(6, intArray.Find(item => item % 3 == 0));
             Assert.AreEqual(0, intArray.Find(item => false));
-        }
 
-        [TestMethod()]
-        public void FindTest_NullableIntArray()
-        {
             int?[] nullableIntArray = new int?[] { 3, 2, 1, 0, -1, -2, -3, -2, -1, 0 };
             Assert.AreEqual(-1, nullableIntArray.Find(item => item < 0));
             Assert.IsNull(nullableIntArray.Find(item => false));
@@ -77,25 +69,22 @@ namespace UnitTest
 
 
         [TestMethod()]
-        public void CollectTest_StringArray()
+        public void TestCollect()
         {
             string[] stringArray = new string[] {"I am a champion!", "You are a looser."};
-            string[] collectedArray = stringArray.Collect(str => str.ToUpper());
+            string[] stringCollectedArray = stringArray.Collect(str => str.ToUpper());
 
-            Assert.AreEqual("I AM A CHAMPION!", collectedArray[0]);
-            Assert.AreEqual("YOU ARE A LOOSER.", collectedArray[1]);
-        }
+            Assert.AreEqual("I AM A CHAMPION!", stringCollectedArray[0]);
+            Assert.AreEqual("YOU ARE A LOOSER.", stringCollectedArray[1]);
 
-        [TestMethod()]
-        public void CollectTest_DoubleArray()
-        {
-            double[] doubleArray = new double[] {3.14, 5, 9.99, 1.23};
-            int[] collectedArray = doubleArray.Collect(item => (int)Math.Round(item));
 
-            Assert.AreEqual(3, collectedArray[0]);
-            Assert.AreEqual(5, collectedArray[1]);
-            Assert.AreEqual(10, collectedArray[2]);
-            Assert.AreEqual(1, collectedArray[3]);
+            double[] doubleArray = new double[] { 3.14, 5, 9.99, 1.23 };
+            int[] doubleCollectedArray = doubleArray.Collect(item => (int)Math.Round(item));
+
+            Assert.AreEqual(3, doubleCollectedArray[0]);
+            Assert.AreEqual(5, doubleCollectedArray[1]);
+            Assert.AreEqual(10, doubleCollectedArray[2]);
+            Assert.AreEqual(1, doubleCollectedArray[3]);
         }
 
         [TestMethod()]
@@ -118,7 +107,7 @@ namespace UnitTest
         [TestMethod()]
         public void Join_should_be_able_to_join_string_array()
         {
-            var ary = new string[] { "I", "am", "a", "pen", "." };
+            var ary = _.Ary("I", "am", "a", "pen", "." );
 
             Assert.AreEqual("Iamapen.", ary.Join());
             Assert.AreEqual("Iamapen.", ary.Join(""));

@@ -39,7 +39,7 @@ namespace UnitTest
         }
 
         [TestMethod()]
-        public void EachTest()
+        public void TestEach()
         {
             int count = 0;
             var keyList = new List<string>();
@@ -59,7 +59,7 @@ namespace UnitTest
         }
 
         [TestMethod()]
-        public void EachWithCountTest()
+        public void TestEachWithCount()
         {
             var keyList = new List<string>();
             var valueList = new List<int>();
@@ -78,7 +78,7 @@ namespace UnitTest
         }
 
         [TestMethod()]
-        public void KeepIfTest()
+        public void TestKeepIf()
         {
             var returnedValue = numberDict.KeepIf((key, val) =>
             {
@@ -103,7 +103,7 @@ namespace UnitTest
         }
 
         [TestMethod()]
-        public void RemoveIfTest()
+        public void TestRemoveIf()
         {
             var returnedValue = numberDict.RemoveIf((key, val) =>
             {

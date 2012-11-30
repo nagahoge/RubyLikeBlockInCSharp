@@ -46,6 +46,8 @@ namespace RubyLikeBlock
         /// </code>
         public static long[] To(this long begin, long to)
         {
+            if (begin > to) return to.To(begin).Reverse();
+
             IList<long> list = new List<long>();
 
             for (long i = begin; i <= to; i++)

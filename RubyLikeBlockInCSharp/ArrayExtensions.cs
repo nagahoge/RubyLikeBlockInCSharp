@@ -55,5 +55,63 @@ namespace RubyLikeBlock
 
             return default(T);
         }
+
+        /// <summary>
+        /// Same to ruby's Array#reverse!
+        /// </summary>
+        public static T[] Reverse<T>(this T[] self)
+        {
+            Array.Reverse(self);
+            return self;
+        }
+
+
+        public static string[] ToStringArray<T>(this T[] self)
+        {
+            var result = new List<string>();
+            self.Each(obj => result.Add(obj.ToString()));
+            return result.ToArray();
+        }
+
+        public static string Join<T>(this IEnumerable<T> self, string sep = null)
+        {
+            return _Join(self, sep);
+        }
+
+        private static string _Join<T>(IEnumerable<T> self, string sep)
+        {
+            if (sep == null) sep = "";
+            string result = "";
+
+            self.EachWithIndex((item, idx) =>
+            {
+                string currentStringExpression;
+
+
+                //if (item is Array)
+                //{
+                //    Type t = item.GetType().GetElementType();
+                //    switch (item.GetType().GetElementType().ToString())
+                //    {
+                //        case typeof(int).ToString():
+
+                //            break;
+                //    }
+
+                //    if (
+
+                //    currentStringExpression = _Join((IEnumerable<t>)item, sep);
+                //}
+                //if (item is Array) currentStringExpression = Join(item, sep);
+                if (item is Array) throw new NotImplementedException(); // TODO
+                else if (item == null) currentStringExpression = "";
+                else currentStringExpression = item.ToString();
+
+                result += currentStringExpression;
+                if (idx != self.Count() - 1) result += sep;
+            });
+
+            return result;
+        }
     }
 }

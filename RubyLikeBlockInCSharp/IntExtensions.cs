@@ -43,6 +43,8 @@ namespace RubyLikeBlock
         /// </code>
         public static int[] To(this int begin, int to)
         {
+            if (begin > to) return to.To(begin).Reverse();
+
             List<int> list = new List<int>();
 
             for (int i = begin; i <= to; i++)

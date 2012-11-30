@@ -45,6 +45,8 @@ namespace UnitTest
         {
             Assert.AreEqual(35, 30.To(40).Find(n => n % 7 == 0));
             Assert.AreEqual(5, 5.To(9).Length);
+
+            CollectionAssert.AreEqual(new int[] { 3, 2, 1 }, 3.To(1));
         }
     }
 }

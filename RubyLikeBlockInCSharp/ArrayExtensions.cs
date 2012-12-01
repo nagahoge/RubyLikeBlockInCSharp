@@ -42,7 +42,7 @@ namespace RubyLikeBlock
         }
 
         
-        // CountメソッドはSystem.Linq名前空間で定義されている
+        // Count is specified in System.Linq namespace.
         // Count<TSource>(IEnumerable<TSource>, Func<TSource, Boolean>)
 
 
@@ -65,7 +65,9 @@ namespace RubyLikeBlock
             return self;
         }
 
-
+        /// <summary>
+        /// Create string[] array by using each element's ToString() method in an array.
+        /// </summary>
         public static string[] ToStringArray<T>(this T[] self)
         {
             var result = new List<string>();
@@ -73,6 +75,9 @@ namespace RubyLikeBlock
             return result.ToArray();
         }
 
+        /// <summary>
+        /// Same to ruby's String#Join.
+        /// </summary>
         public static string Join<T>(this IEnumerable<T> self, string sep = null)
         {
             return _Join(self, sep);

@@ -1,6 +1,6 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RubyLikeBlockInCSharp", "RubyLikeBlockInCSharp\RubyLikeBlockInCSharp.csproj", "{7F7A0FB8-BC79-4701-BC24-76F0CA526089}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTest", "UnitTest\UnitTest.csproj", "{6D8CDEDD-69BF-424E-8D98-389AB5A4BE70}"
@@ -21,8 +21,8 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{7F7A0FB8-BC79-4701-BC24-76F0CA526089}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7F7A0FB8-BC79-4701-BC24-76F0CA526089}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F7A0FB8-BC79-4701-BC24-76F0CA526089}.Debug|Any CPU.ActiveCfg = Release|Any CPU
+		{7F7A0FB8-BC79-4701-BC24-76F0CA526089}.Debug|Any CPU.Build.0 = Release|Any CPU
 		{7F7A0FB8-BC79-4701-BC24-76F0CA526089}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7F7A0FB8-BC79-4701-BC24-76F0CA526089}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6D8CDEDD-69BF-424E-8D98-389AB5A4BE70}.Debug|Any CPU.ActiveCfg = Debug|Any CPU

@@ -6,10 +6,10 @@ RubyLikeBlockInCSharp enable you to slim-up and more readable C# program code.
 This library is much influenced by ruby's methods.
 
 
-## Hot To Use
+## How To Use
 
-Please read the [Wiki](https://github.com/nagahoge/RubyLikeBlockInCSharp/wiki) page 
-for usage and API documentation.
+Please read the [Wiki/How-To-Use](https://github.com/nagahoge/RubyLikeBlockInCSharp/wiki/How-To-Use) 
+page for usage and API documentation.
 
 
 
